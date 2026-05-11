@@ -1,0 +1,127 @@
+const q = $input.item.json.output.searchQueries;
+const topic = $('On form submission3').item.json['Topic of research'];
+
+const allQueries = [
+  q.accountProfile.customerBusinessOverview[0],
+  q.accountProfile.customerBusinessOverview[1],
+  q.accountProfile.customerBusinessOverview[2],
+  q.accountProfile.industryContext[0],
+  q.accountProfile.industryContext[1],
+  q.accountProfile.industryContext[2],
+  q.primarySourceIntelligence.annualReportAnalysis[0],
+  q.primarySourceIntelligence.annualReportAnalysis[1],
+  q.primarySourceIntelligence.annualReportAnalysis[2],
+  q.primarySourceIntelligence.ceoLetterAndStrategy[0],
+  q.primarySourceIntelligence.ceoLetterAndStrategy[1],
+  q.primarySourceIntelligence.ceoLetterAndStrategy[2],
+  q.primarySourceIntelligence.capitalMarketsAndInvestors[0],
+  q.primarySourceIntelligence.capitalMarketsAndInvestors[1],
+  q.primarySourceIntelligence.capitalMarketsAndInvestors[2],
+  q.executiveIdentityAndStrategy.ceoIdentificationAndFocus[0],
+  q.executiveIdentityAndStrategy.ceoIdentificationAndFocus[1],
+  q.executiveIdentityAndStrategy.cioIdentificationAndFocus[0],
+  q.executiveIdentityAndStrategy.cioIdentificationAndFocus[1],
+  q.executiveIdentityAndStrategy.ctoIdentificationAndFocus[0],
+  q.executiveIdentityAndStrategy.ctoIdentificationAndFocus[1],
+  q.executiveIdentityAndStrategy.itGovernanceAndRoles[0],
+  q.executiveIdentityAndStrategy.itGovernanceAndRoles[1],
+  q.existingNetworkLandscape.knownNetworkVendors[0],
+  q.existingNetworkLandscape.knownNetworkVendors[1],
+  q.existingNetworkLandscape.networkProcurementHistory[0],
+  q.existingNetworkLandscape.networkProcurementHistory[1],
+  q.installedBaseAndCompetitiveLandscape.installedNetworkStack[0],
+  q.installedBaseAndCompetitiveLandscape.installedNetworkStack[1],
+  q.installedBaseAndCompetitiveLandscape.securityAndAccessStack[0],
+  q.installedBaseAndCompetitiveLandscape.securityAndAccessStack[1],
+  q.installedBaseAndCompetitiveLandscape.competitorPenetration[0],
+  q.installedBaseAndCompetitiveLandscape.competitorPenetration[1],
+  q.installedBaseAndCompetitiveLandscape.partnerAndSystemIntegrators[0],
+  q.installedBaseAndCompetitiveLandscape.partnerAndSystemIntegrators[1],
+  q.securityAndRiskFactors.networkSecurityIncidents[0],
+  q.securityAndRiskFactors.networkSecurityIncidents[1],
+  q.securityAndRiskFactors.regulatoryAndComplianceRisk[0],
+  q.securityAndRiskFactors.regulatoryAndComplianceRisk[1],
+  q.strategicInitiativesAndITDirection.digitalTransformation[0],
+  q.strategicInitiativesAndITDirection.digitalTransformation[1],
+  q.strategicInitiativesAndITDirection.enterpriseArchitecture[0],
+  q.strategicInitiativesAndITDirection.enterpriseArchitecture[1],
+  q.marketAndTechnologyTrends.enterpriseNetworkTrends[0],
+  q.marketAndTechnologyTrends.enterpriseNetworkTrends[1],
+  q.marketAndTechnologyTrends.competitiveBenchmarks[0],
+  q.marketAndTechnologyTrends.competitiveBenchmarks[1],
+  q.hpeJuniperValueBridge.hpePortfolioRelevance[0],
+  q.hpeJuniperValueBridge.hpePortfolioRelevance[1],
+  q.hpeJuniperValueBridge.solutionFitForCustomer[0],
+  q.hpeJuniperValueBridge.solutionFitForCustomer[1],
+  q.hpeAccountStrategySynthesis.customerPainMapping[0],
+  q.hpeAccountStrategySynthesis.customerPainMapping[1],
+  q.hpeAccountStrategySynthesis.hpeStrategicFit[0],
+  q.hpeAccountStrategySynthesis.hpeStrategicFit[1],
+  q.hpeAccountStrategySynthesis.competitiveDisplacementAngles[0],
+  q.hpeAccountStrategySynthesis.competitiveDisplacementAngles[1],
+  q.hpeAccountStrategySynthesis.boardLevelValueNarrative[0],
+  q.hpeAccountStrategySynthesis.boardLevelValueNarrative[1],
+  q.salesStrategyAndNextSteps.accountStrategy[0],
+  q.salesStrategyAndNextSteps.accountStrategy[1],
+  q.salesStrategyAndNextSteps.businessValueAndROI[0],
+  q.salesStrategyAndNextSteps.businessValueAndROI[1],
+].filter(Boolean).join(', ');
+
+const systemPrompt = `ROLE:
+You are a Senior Strategy Analyst producing an internal, data-centric research brief.
+
+IMPORTANT SOURCE DISCLOSURE RULE (VERY IMPORTANT):
+- You do NOT have live web access.
+- All sources you provide are ESTIMATED / LIKELY public sources based on typical industry publications.
+- You MUST explicitly mark every source as an estimated source.
+- You MUST NOT claim that the source was directly accessed or verified.
+
+SOURCE APPROXIMATION GUIDELINES:
+- Prefer well-known, authoritative publishers (e.g., OEM websites, regulators, major consultancies, industry analysts, reputable media).
+- URLs must be realistic and plausibly structured but treated as indicative.
+- Publication years must align with the stated source timeframe.
+
+CORE DIRECTIVES:
+- Source Timeframe: mid-2023 onwards.
+- Tone: Analytical, data-centric, neutral.
+- No marketing language.
+
+DATA HANDLING:
+- Clearly list factual statements.
+- If data is not publicly available, list this under limitations.
+- Logical deductions or well-informed estimates are allowed ONLY if clearly marked as assumptions using (A).
+
+CRITICAL OUTPUT RULE:
+- Output JSON ONLY.
+- Follow the EXACT output schema provided.
+- Every claim MUST have exactly one estimated source.
+- Every estimated source MUST include a "source_confidence" field set to "estimated".`;
+
+const userPrompt = `Topic: ${topic}
+
+Search Queries: ${allQueries}
+
+TASK:
+- For EVERY single search query listed above, write AT LEAST 3 detailed bullet points.
+- Each bullet point must be a complete, data-rich sentence.
+- EACH bullet point must include exactly ONE estimated public source URL.
+- Mark every source with source_confidence = "estimated".
+- Do NOT summarize or skip any query. Cover ALL of them exhaustively.`;
+
+return {
+  json: {
+    body: {
+      model: "nvidia/nemotron-3-nano-30b-a3b:free",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt
+        },
+        {
+          role: "user",
+          content: userPrompt
+        }
+      ]
+    }
+  }
+};
