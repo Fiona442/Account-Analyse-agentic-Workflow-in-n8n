@@ -1,0 +1,27 @@
+const searchQueries = $json.output.searchQueries || {};
+const jobs = [];
+
+// 1. Topic-Ebene (account, industry, ...)
+for (const [topic, subTopics] of Object.entries(searchQueries)) {
+
+  if (typeof subTopics !== 'object' || subTopics === null) continue;
+
+  // 2. Subtopic-Ebene (customer, company, analysis, ...)
+  for (const [subTopic, queries] of Object.entries(subTopics)) {
+
+    if (!Array.isArray(queries)) continue;
+
+    // 3. Einzelne Queries
+    for (const query of queries) {
+      jobs.push({
+        json: {
+          topic,
+          subTopic,
+          query
+        }
+      });
+    }
+  }
+}
+
+return jobs;
