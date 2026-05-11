@@ -1,0 +1,10 @@
+ {
+        "topic": "USER_INPUT_TOPIC",
+        "searchQueries": [
+          "QUERY_1",
+          "QUERY_2",
+          "QUERY_3",
+          "QUERY_4",
+          "QUERY_5"
+        ]
+      }
