@@ -1,0 +1,185 @@
+{
+  "searchQueries": {
+    "accountProfile": {
+      "customerBusinessOverview": [
+        "{{CUSTOMER_NAME}} company revenue size",
+        "{{CUSTOMER_NAME}} annual revenue and employee count",
+        "{{CUSTOMER_NAME}} business segments core markets",
+        "{{CUSTOMER_NAME}} geographic operational footprint"
+      ],
+      "industryContext": [
+        "{{CUSTOMER_NAME}} industry competitive landscape",
+        "{{CUSTOMER_NAME}} industry digital transformation trends",
+        "network infrastructure requirements {{CUSTOMER_NAME}} industry"
+      ]
+    },
+
+    "primarySourceIntelligence": {
+      "annualReportAnalysis": [
+        "{{CUSTOMER_NAME}} annual report IT strategy",
+        "{{CUSTOMER_NAME}} annual report digital transformation",
+        "{{CUSTOMER_NAME}} Geschäftsbericht IT Strategie",
+        "filetype:pdf {{CUSTOMER_NAME}} annual report technology",
+        "{{CUSTOMER_NAME}} integrated report IT"
+      ],
+      "ceoLetterAndStrategy": [
+        "{{CUSTOMER_NAME}} CEO letter annual report technology",
+        "{{CUSTOMER_NAME}} CEO strategy digital transformation",
+        "{{CUSTOMER_NAME}} CEO comments IT cloud data AI"
+      ],
+      "capitalMarketsAndInvestors": [
+        "{{CUSTOMER_NAME}} Capital Markets Day IT strategy",
+        "{{CUSTOMER_NAME}} investor presentation technology strategy",
+        "{{CUSTOMER_NAME}} earnings call technology cloud"
+      ]
+    },
+
+    "executiveIdentityAndStrategy": {
+      "ceoIdentificationAndFocus": [
+        "who is the CEO of {{CUSTOMER_NAME}}",
+        "{{CUSTOMER_NAME}} CEO background digital strategy",
+        "{{CUSTOMER_NAME}} CEO interview technology strategy"
+      ],
+      "cioIdentificationAndFocus": [
+        "who is the CIO of {{CUSTOMER_NAME}}",
+        "{{CUSTOMER_NAME}} Chief Information Officer interview",
+        "{{CUSTOMER_NAME}} CIO IT strategy cloud data security"
+      ],
+      "ctoIdentificationAndFocus": [
+        "who is the CTO of {{CUSTOMER_NAME}}",
+        "{{CUSTOMER_NAME}} Chief Technology Officer interview",
+        "{{CUSTOMER_NAME}} CTO technology platform strategy"
+      ],
+      "itGovernanceAndRoles": [
+        "{{CUSTOMER_NAME}} CIO vs CTO responsibilities",
+        "{{CUSTOMER_NAME}} IT governance model",
+        "{{CUSTOMER_NAME}} digital organization structure"
+      ]
+    },
+
+    "existingNetworkLandscape": {
+      "knownNetworkVendors": [
+        "{{CUSTOMER_NAME}} Cisco network infrastructure",
+        "{{CUSTOMER_NAME}} Juniper network deployment",
+        "{{CUSTOMER_NAME}} HPE Aruba networking",
+        "{{CUSTOMER_NAME}} enterprise network vendor landscape"
+      ],
+      "networkProcurementHistory": [
+        "{{CUSTOMER_NAME}} network infrastructure investment history",
+        "{{CUSTOMER_NAME}} IT infrastructure upgrade projects network",
+        "{{CUSTOMER_NAME}} data center network modernization"
+      ]
+    },
+
+    "installedBaseAndCompetitiveLandscape": {
+      "installedNetworkStack": [
+        "{{CUSTOMER_NAME}} core network switches vendor",
+        "{{CUSTOMER_NAME}} SD-WAN provider",
+        "{{CUSTOMER_NAME}} WLAN infrastructure enterprise",
+        "{{CUSTOMER_NAME}} data center network vendor"
+      ],
+      "securityAndAccessStack": [
+        "{{CUSTOMER_NAME}} firewall vendor",
+        "{{CUSTOMER_NAME}} SASE provider",
+        "{{CUSTOMER_NAME}} zero trust network"
+      ],
+      "competitorPenetration": [
+        "{{CUSTOMER_NAME}} Cisco enterprise contract",
+        "{{CUSTOMER_NAME}} Juniper Mist deployment",
+        "{{CUSTOMER_NAME}} Fortinet Palo Alto enterprise network"
+      ],
+      "partnerAndSystemIntegrators": [
+        "{{CUSTOMER_NAME}} network system integrator",
+        "{{CUSTOMER_NAME}} managed network services provider"
+      ]
+    },
+
+    "securityAndRiskFactors": {
+      "networkSecurityIncidents": [
+        "{{CUSTOMER_NAME}} network security breach",
+        "{{CUSTOMER_NAME}} cyber attack network infrastructure",
+        "{{CUSTOMER_NAME}} data breach root cause network"
+      ],
+      "regulatoryAndComplianceRisk": [
+        "{{CUSTOMER_NAME}} GDPR compliance network architecture",
+        "{{CUSTOMER_NAME}} regulatory requirements IT network",
+        "secure enterprise networks regulatory compliance {{CUSTOMER_NAME}} industry"
+      ]
+    },
+
+    "strategicInitiativesAndITDirection": {
+      "digitalTransformation": [
+        "{{CUSTOMER_NAME}} digital transformation strategy",
+        "{{CUSTOMER_NAME}} cloud migration strategy",
+        "{{CUSTOMER_NAME}} AI driven operations IT infrastructure"
+      ],
+      "enterpriseArchitecture": [
+        "{{CUSTOMER_NAME}} hybrid cloud architecture network",
+        "{{CUSTOMER_NAME}} multi cloud connectivity strategy",
+        "{{CUSTOMER_NAME}} distributed workforce network requirements"
+      ]
+    },
+
+    "marketAndTechnologyTrends": {
+      "enterpriseNetworkTrends": [
+        "enterprise network architecture trends",
+        "AI driven network operations enterprises",
+        "network automation enterprise scale"
+      ],
+      "competitiveBenchmarks": [
+        "how competitors of {{CUSTOMER_NAME}} modernize networks",
+        "enterprise networking best practices {{CUSTOMER_NAME}} industry",
+        "Gartner Forrester enterprise networking benchmarks"
+      ]
+    },
+
+    "hpeJuniperValueBridge": {
+      "hpePortfolioRelevance": [
+        "HPE Aruba enterprise networking use cases",
+        "Juniper AI driven networking Mist enterprise",
+        "HPE GreenLake network management enterprise"
+      ],
+      "solutionFitForCustomer": [
+        "HPE networking solutions for {{CUSTOMER_NAME}} industry",
+        "Juniper Mist AI for large enterprise networks",
+        "secure scalable enterprise networks HPE Juniper"
+      ]
+    },
+
+    "hpeAccountStrategySynthesis": {
+      "customerPainMapping": [
+        "{{CUSTOMER_NAME}} network complexity challenges",
+        "{{CUSTOMER_NAME}} multi-site IT complexity",
+        "{{CUSTOMER_NAME}} OT IT convergence challenges"
+      ],
+      "hpeStrategicFit": [
+        "HPE Aruba for global manufacturing",
+        "HPE GreenLake networking consumption model",
+        "HPE Aruba Zero Trust enterprise"
+      ],
+      "competitiveDisplacementAngles": [
+        "replace Cisco enterprise SD-WAN with Aruba",
+        "Juniper Mist vs Cisco DNA enterprise",
+        "cloud managed network alternative vendors"
+      ],
+      "boardLevelValueNarrative": [
+        "business value of network reliability manufacturing",
+        "IT resilience impact on production uptime",
+        "cybersecurity impact on operational continuity"
+      ]
+    },
+
+    "salesStrategyAndNextSteps": {
+      "accountStrategy": [
+        "enterprise account network modernization strategy",
+        "land and expand networking strategy enterprise accounts",
+        "network transformation roadmap enterprise IT"
+      ],
+      "businessValueAndROI": [
+        "ROI of enterprise network modernization",
+        "network automation operational cost reduction",
+        "business impact of reliable enterprise networks"
+      ]
+    }
+  }
+}
