@@ -1,0 +1,8 @@
+{
+  "api_key": "enter api key here",
+  "query": "{{ $json.query }}",
+  "search_depth": "basic",
+  "max_results": 3,
+  "include_answer": false,
+  "include_raw_content": false
+}
