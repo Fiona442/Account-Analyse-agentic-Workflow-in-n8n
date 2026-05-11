@@ -1,0 +1,13 @@
+{
+  "model": "nvidia/nemotron-3-nano-30b-a3b:free", //This is an example, put the URL to the modle you are using here
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a research agent, you will receive 5 queries and a topic, you are to do in-depth research on that topic with those queries."
+    },
+    {
+      "role": "user",
+      "content": "Topic: {{ $json.output.topic }}, search queries: {{ $json.output.searchQueries[0] }}, {{ $json.output.searchQueries[1] }}, {{ $json.output.searchQueries[2] }}, {{ $json.output.searchQueries[3] }}, {{ $json.output.searchQueries[4] }}"
+    }
+  ]
+}
