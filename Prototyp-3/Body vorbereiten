@@ -1,0 +1,17 @@
+const topic = $('Code in JavaScript').item.json.topic;
+const query = $json.query;
+const formatted_results = $json.formatted_results;
+
+const body = {
+  model: "claude-sonnet-4-6",
+  max_tokens: 2048,
+  system: "You are to act as a Senior Strategy Analyst specializing in the company's sectors and HPE Networking Portfolio.\n\nSTRICT RULES:\n- You may ONLY use the provided search results as sources.\n- EVERY factual statement MUST end with exactly one source URL in parentheses.\n- Do NOT invent or modify URLs.\n- Do NOT combine multiple sources in one statement.",
+  messages: [
+    {
+      role: "user",
+      content: `Topic: ${topic}\n\nSearch Query: ${query}\n\nSearch Results (sources):\n${formatted_results}\n\nTASK:\n- Write clear, factual bullet points.\n- EACH bullet point must end with the exact URL of the source it comes from.\n- Use this format STRICTLY:\n  • Statement text (https://source-url)\n- If no source clearly supports a statement, do NOT include it.`
+    }
+  ]
+};
+
+return [{ json: { body: JSON.stringify(body) } }];
