@@ -1,0 +1,16 @@
+for (const item of items) {
+  const results = item.json.results || [];
+  let formatted = '';
+  for (const r of results) {
+    // Sonderzeichen aus Content entfernen/ersetzen
+    const safeTitle   = (r.title   || '').replace(/"/g, "'").replace(/\\/g, '');
+    const safeUrl     = (r.url     || '').replace(/"/g, "'").replace(/\\/g, '');
+    const safeContent = (r.content || '').replace(/"/g, "'").replace(/\\/g, '').replace(/[\r\n]+/g, ' ');
+
+    formatted += '- Title: '   + safeTitle   + '\n';
+    formatted += '  URL: '     + safeUrl     + '\n';
+    formatted += '  Extract: ' + safeContent + '\n\n';
+  }
+  item.json.formatted_results = formatted.trim();
+}
+return items;
